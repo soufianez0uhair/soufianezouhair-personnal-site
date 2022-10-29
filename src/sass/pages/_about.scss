@@ -1,0 +1,35 @@
+.about {
+    position: relative;
+    display: grid;
+    grid-template-columns: 25rem 1fr;
+    padding: 2rem;
+    &__img {
+        position: absolute;
+        width: 23rem;
+        z-index: -1;
+        left: 2rem;
+        transition: left .2s ease-in;
+        &:hover {
+            left: 23rem;
+        }
+        &--elon {
+            top: 2rem;
+        }
+        &--tyrion {
+            top: 30rem;
+        }
+        &--alkhawarizmi {
+            top: 50rem;
+        }
+    }
+    &__text {
+        color: #fff;
+        font-size: 5rem;
+        color: #000;
+        grid-column: 2 / 3;
+        animation: moveToRight 1s ease-in;
+        span {
+            color: blue;
+        }
+    }
+}

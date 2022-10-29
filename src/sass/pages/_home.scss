@@ -1,0 +1,29 @@
+.home {
+    height: calc(100vh - 5.5rem);
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 2rem;
+    &__imgs {
+        width: 23rem;
+        position: relative;
+        .image {
+            position: absolute;
+            top: 0;
+            transition: opacity .5s ease-in;
+            &:hover {
+                opacity: 0;
+            }
+        }
+    }
+    &__text {
+        position: relative;
+        font-size: 5rem;
+        &:hover &__name {
+            display: none;
+        }
+        &:hover::before {
+            content: 'SAMURAI DEVELOPER'
+        }
+    }
+}

@@ -1,0 +1,14 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    border-bottom: .1rem solid #000;
+    font-size: 1.5rem;
+    &__link {
+        &:hover {
+            opacity: .5;
+        }
+    }
+}

@@ -1,13 +1,189 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&display=swap");
+@keyframes moveToRight {
+  0% {
+    margin-left: -25rem;
+    opacity: 0; }
+  100% {
+    margin-left: 0;
+    opacity: 1rem; } }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
+@keyframes moveArrow {
+  0% {
+    left: 0; }
+  100% {
+    left: 2.5rem;
+    transform: scale(1.5); } }
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  background: #f2f2f2; }
+
+img {
+  width: 100%; }
+
+input {
+  outline: none;
+  border: none; }
+
+a {
+  text-decoration: none;
+  color: #000; }
+
+button {
+  outline: none;
+  border: none;
+  background: none; }
+
+body {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400; }
+
+.project__details {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  padding: 1rem 1.5rem;
+  font-size: 1.3rem; }
+
+.project__title {
+  font-size: 2.2rem;
+  text-align: center; }
+
+.project__links {
+  display: flex;
+  justify-content: space-between; }
+
+.project__link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+  padding-bottom: .5rem;
+  transition: all .3s ease-in; }
+  .project__link::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: block;
+    width: 100%;
+    height: .1rem;
+    background: blue;
+    z-index: -1;
+    transition: height .3s ease-in; }
+  .project__link:hover {
+    color: #fff;
+    padding: 1rem; }
+    .project__link:hover::after {
+      height: 100%; }
+    .project__link:hover .icon--arrow {
+      animation: moveArrow .2s ease-in; }
+
+.icon--arrow {
+  position: relative; }
+
+.icon--home {
+  font-size: 2.2rem; }
+
+.loader {
+  grid-column: 1 / 3;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: calc(100vh - 6rem); }
+  .loader__gif {
+    width: 10rem; }
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-bottom: .1rem solid #000;
+  font-size: 1.5rem; }
+  .header__link:hover {
+    opacity: .5; }
+
+.home {
+  height: calc(100vh - 5.5rem);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  padding: 2rem; }
+  .home__imgs {
+    width: 23rem;
+    position: relative; }
+    .home__imgs .image {
+      position: absolute;
+      top: 0;
+      transition: opacity .5s ease-in; }
+      .home__imgs .image:hover {
+        opacity: 0; }
+  .home__text {
+    position: relative;
+    font-size: 5rem; }
+    .home__text:hover .home__text__name {
+      display: none; }
+    .home__text:hover::before {
+      content: 'SAMURAI DEVELOPER'; }
+
+.about {
+  position: relative;
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  padding: 2rem; }
+  .about__img {
+    position: absolute;
+    width: 23rem;
+    z-index: -1;
+    left: 2rem;
+    transition: left .2s ease-in; }
+    .about__img:hover {
+      left: 23rem; }
+    .about__img--elon {
+      top: 2rem; }
+    .about__img--tyrion {
+      top: 30rem; }
+    .about__img--alkhawarizmi {
+      top: 50rem; }
+  .about__text {
+    color: #fff;
+    font-size: 5rem;
+    color: #000;
+    grid-column: 2 / 3;
+    animation: moveToRight 1s ease-in; }
+    .about__text span {
+      color: blue; }
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 2rem;
+  font-size: 1.5rem; }
+  .contact__option {
+    transition: font-size .3s ease-in; }
+    .contact__option:hover {
+      font-size: 3rem;
+      color: blue; }
+
+.projectsPage {
+  padding: 2rem; }
+  .projectsPage__title {
+    font-size: 3rem;
+    margin-bottom: 2rem; }
+    .projectsPage__title span:hover {
+      color: blue; }
+  .projectsPage__projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(50rem, 1fr));
+    gap: 2rem; }
